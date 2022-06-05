@@ -13,6 +13,7 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -38,6 +39,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -117,8 +119,18 @@ public class AddMemories extends AppCompatActivity {
         });
         if (recuerdo != null)
         {
-            // Categoria
             String categoria_rec = recuerdo.getCategoria();
+            // Obtenemos las categorias
+            /*RecuerdoDBHelper db = new RecuerdoDBHelper(this);
+            Cursor cursor_categories = db.getAllCategoriasFromDB();
+            ArrayList<String> collectionAL = new ArrayList<>();
+            while (cursor_categories.moveToNext()) {
+                for (int i = 0; i < collectionAL.size(); i++)
+                    if (categoria_rec.equals(collectionAL.get(i)))
+
+            }*/
+            // Categoria
+
             if (categoria_rec.equals("Viajes"))
                 categoria.setSelection(0);
             else if(categoria_rec.equals("Ramos"))

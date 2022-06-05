@@ -56,6 +56,26 @@ public class RecuerdoDBHelper extends SQLiteOpenHelper{
         //db.close();
         return cursor;
     }
+    public Cursor getAllCategoriasFromDB(){
+        RecuerdoDBHelper dbHelper = this;
+        // Gets the data repository in read mode
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String columns[] =  {RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA};
+        String sortOrder =
+                RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA + " ASC";
+        Cursor cursor = db.query(
+                RecuerdoContract.RecuerdoEntry.TABLE_NAME,   // The table to query
+                columns,             // The array of columns to return (pass null to get all)
+                null,              // The columns for the WHERE clause
+                null,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+        //db.close();
+        return cursor;
+    }
 
     public Cursor findRecuerdosByCategoriaFechaDesc(String categoria)
     {
@@ -94,6 +114,14 @@ public class RecuerdoDBHelper extends SQLiteOpenHelper{
 
         imageInBytes = objectsByteArrayOutputStream.toByteArray();
 
+        // Imagen categoria
+        ByteArrayOutputStream categoria_objectsByteArrayOutputStream = new ByteArrayOutputStream();
+        byte[] categoria_imageInBytes;
+        Bitmap categoria_imageToStoreBitmap = recuerdo.getImage_categoria();
+        categoria_imageToStoreBitmap.compress(Bitmap.CompressFormat.JPEG, 90, categoria_objectsByteArrayOutputStream);
+
+        categoria_imageInBytes = categoria_objectsByteArrayOutputStream.toByteArray();
+
         // Valores
         ContentValues values = new ContentValues();
         values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA, recuerdo.getCategoria());
@@ -101,6 +129,7 @@ public class RecuerdoDBHelper extends SQLiteOpenHelper{
         values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_FECHA, recuerdo.getFecha());
         values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_LUGAR, recuerdo.getLugar());
         values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_DESCRIPCION, recuerdo.getDescripcion());
+        values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA_IMAGEN, categoria_imageInBytes);
         values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_IMAGEN, imageInBytes);
 
         String selection = RecuerdoContract.RecuerdoEntry._ID + " = ?";

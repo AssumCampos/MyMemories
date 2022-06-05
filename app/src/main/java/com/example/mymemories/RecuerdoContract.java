@@ -12,6 +12,8 @@ public class RecuerdoContract {
         public static final String COLUMN_NAME_LUGAR = "recuerdoLugar";
         public static final String COLUMN_NAME_DESCRIPCION = "recuerdoDescripcion";
         public static final String COLUMN_NAME_CATEGORIA = "recuerdoCategoria";
+        public static final String COLUMN_NAME_CATEGORIA_IMAGEN = "recuerdoCategoriaImagen";
+
     }
 
     public static final String SQL_CREATE_ENTRIES =
@@ -22,6 +24,7 @@ public class RecuerdoContract {
                     RecuerdoEntry.COLUMN_NAME_LUGAR + " TEXT," +
                     RecuerdoEntry.COLUMN_NAME_DESCRIPCION + " TEXT," +
                     RecuerdoEntry.COLUMN_NAME_CATEGORIA + " TEXT," +
+                    RecuerdoEntry.COLUMN_NAME_CATEGORIA_IMAGEN + " BLOB, " +
                     RecuerdoEntry.COLUMN_NAME_IMAGEN + " BLOB)";
 
     public static final String SQL_DELETE_ENTRIES =

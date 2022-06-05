@@ -12,6 +12,16 @@ public class Recuerdo implements Serializable{
     public String descripcion;
     public Bitmap image;
 
+    public Bitmap getImage_categoria() {
+        return image_categoria;
+    }
+
+    public void setImage_categoria(Bitmap image_categoria) {
+        this.image_categoria = image_categoria;
+    }
+
+    public Bitmap image_categoria;
+
     public Bitmap getImage() {
         return image;
     }
