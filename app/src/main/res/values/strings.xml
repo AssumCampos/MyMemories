@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">MyMemories</string>
+    <string name="categories"> Submit </string>
+    <string name="title_activity_recuerdo_details">RecuerdoDetails</string>
+    <string name="logo_name">Logo name</string>
+    <string name="slogan_name">Slogan name</string>
+    <string name="icons_button">Icon buttons</string>
+
+    <style name= "AppBaseTheme" parent= "Theme.AppCompat.DayNight.DarkActionBar" >
+        <!-- Customize your theme here. -->
+        <item name= "colorPrimary" > @color/md_orange_500 </item>
+        <item name= "colorPrimaryDark" > @color/md_orange_900 </item>
+        <item name= "colorAccent" > @color/md_orange_700 </item>
+    </style>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <style name= "OswaldViewStyle" parent= "android:Widget" >
+        <item name= "android:fontFamily" > @font/oswald_light </item>
+    </style>
+    <style name= "OswaldTextViewStyle" parent= "android:Widget.TextView" >
+        <item name= "android:fontFamily" > @font/oswald_light </item>
+    </style>
+    <style name= "OswaldEditTextStyle" parent= "android:Widget.EditText" >
+        <item name= "android:editTextStyle" > @font/oswald_light </item>
+    </style>
+    <!--
+    <style name= "OswaldTextViewStyle" parent= "android:Widget.TextView" >
+        <item name= "android:fontFamily" > @font/oswald_light </item>
+    </style>
+    <style name= "OswaldEditTextStyle" parent= "android:Widget.EditText" >
+        <item name= "android:fontFamily" > @font/oswald_light </item>
+    </style>
+    <style name= "OswaldButtonStyle" parent= "android:Widget.Holo.Button" >
+        <item name= "android:fontFamily" > @font/oswald_light </item>
+    </style>-->
+</resources>

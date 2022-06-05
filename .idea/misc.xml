@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/drawable/background.xml" value="0.1" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/drawable/calendar.xml" value="0.1" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/layout/activity_add_memories.xml" value="0.33" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/layout/activity_listado_recuerdos.xml" value="0.33" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/layout/activity_main.xml" value="0.1707193515704154" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/layout/activity_recuerdo_details.xml" value="0.17831813576494426" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/layout/list_recuerdo.xml" value="0.1" />
+        <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.205" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.106" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/background.xml" value="0.106" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/baseline_library_books_24.xml" value="0.106" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/calendar.xml" value="0.106" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/gradient_color.xml" value="0.1" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/row_corners.xml" value="0.1" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/activity_add_memories.xml" value="0.4" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/activity_listado_recuerdos.xml" value="0.24166666666666667" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/activity_recuerdo_details.xml" value="0.2" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/activity_splash_screen.xml" value="0.18568840579710144" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/activity_update_or_take_picture.xml" value="0.16" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/list_recuerdo.xml" value="0.6" />
+        <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/xml/searchable.xml" value="0.2259963768115942" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
