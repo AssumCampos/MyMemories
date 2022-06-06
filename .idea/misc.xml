@@ -13,6 +13,7 @@
         <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/layout/activity_recuerdo_details.xml" value="0.17831813576494426" />
         <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/layout/list_recuerdo.xml" value="0.1" />
         <entry key="..\:/Universidad/4o/ADM/Repo/ADM/MyMemories/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.205" />
+        <entry key="..\:/Users/assum/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.26721014492753625" />
         <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.106" />
         <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/background.xml" value="0.106" />
         <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/drawable/baseline_library_books_24.xml" value="0.106" />
@@ -28,8 +29,10 @@
         <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/activity_update_or_take_picture.xml" value="0.16" />
         <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/layout/list_recuerdo.xml" value="0.6" />
         <entry key="..\:/Users/assum/Desktop/IngenieriaMultimedia/4B/ADM/repositorioPrivado/ADM/MyMemories/app/src/main/res/xml/searchable.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/assum/Desktop/TFG-App/repo/MyMemories/app/src/main/res/layout/activity_add_memories.xml" value="0.26721014492753625" />
         <entry key="..\:/Users/assum/Desktop/TFG-App/repo/MyMemories/app/src/main/res/layout/activity_listado_recuerdos.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/assum/Desktop/TFG-App/repo/MyMemories/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/assum/Desktop/TFG-App/repo/MyMemories/app/src/main/res/layout/activity_new_collection.xml" value="0.26721014492753625" />
         <entry key="..\:/Users/assum/Desktop/TFG-App/repo/MyMemories/app/src/main/res/layout/list_colecction.xml" value="0.264" />
         <entry key="..\:/Users/assum/Desktop/TFG-App/repo/MyMemories/app/src/main/res/layout/list_recuerdo.xml" value="0.24895833333333334" />
       </map>

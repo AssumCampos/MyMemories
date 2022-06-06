@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                     flag_categoria = true;
             if (!flag_categoria)
                 collectionAL.add(cursor_categories.getString(cursor_categories.getColumnIndexOrThrow(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA)));
-
         }
         collectionAL.add("Nueva categoria");
 
@@ -101,12 +100,18 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
             String coleccionSeleccionada = adapter.getCollectionByPosition(viewHolder.getAdapterPosition());
+            if(coleccionSeleccionada.equals("Nueva categoria")){
+                Intent intent = new Intent(MainActivity.this, NewCollection.class);
+                startActivity(intent);
+            }
+            else{
+                Intent intent = new Intent(MainActivity.this, ListadoRecuerdos.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("BUNDLE_CAT", coleccionSeleccionada);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
 
-            Intent intent = new Intent(MainActivity.this, ListadoRecuerdos.class);
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("BUNDLE_CAT", coleccionSeleccionada);
-            intent.putExtras(bundle);
-            startActivity(intent);
         }
     };
 }

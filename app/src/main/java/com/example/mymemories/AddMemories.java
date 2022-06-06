@@ -50,6 +50,7 @@ public class AddMemories extends AppCompatActivity {
     String selectedDate;
     String category_text;
     boolean recuerdo_update;
+    ArrayList<String> categories = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,9 +101,25 @@ public class AddMemories extends AppCompatActivity {
                 newFragment.show(getSupportFragmentManager(), "datePicker");
             }
         });
-        // Categories spinner
+
+        // Obtenemos las categorias
+        RecuerdoDBHelper db = new RecuerdoDBHelper(this);
+        Cursor cursor_categories = db.getAllCategoriasFromDB();
+
+        while (cursor_categories.moveToNext()) {
+            Boolean flag_categoria = false;
+            String categoria = cursor_categories.getString(cursor_categories.getColumnIndexOrThrow(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA));
+            for(int i = 0; i < categories.size(); i++)
+                if(categoria.equals(categories.get(i))){
+                    flag_categoria = true;
+                    break;
+                }
+            if (!flag_categoria)
+                categories.add(cursor_categories.getString(cursor_categories.getColumnIndexOrThrow(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA)));
+
+        }
         Spinner categoria = (Spinner) findViewById(R.id.idCategory);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categorias_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(AddMemories.this, android.R.layout.simple_spinner_item, categories);
         categoria.setAdapter(adapter);
         categoria.setSelection(1);
         // Listeners Spinner
@@ -120,25 +137,12 @@ public class AddMemories extends AppCompatActivity {
         if (recuerdo != null)
         {
             String categoria_rec = recuerdo.getCategoria();
-            // Obtenemos las categorias
-            /*RecuerdoDBHelper db = new RecuerdoDBHelper(this);
-            Cursor cursor_categories = db.getAllCategoriasFromDB();
-            ArrayList<String> collectionAL = new ArrayList<>();
-            while (cursor_categories.moveToNext()) {
-                for (int i = 0; i < collectionAL.size(); i++)
-                    if (categoria_rec.equals(collectionAL.get(i)))
 
-            }*/
-            // Categoria
-
-            if (categoria_rec.equals("Viajes"))
-                categoria.setSelection(0);
-            else if(categoria_rec.equals("Ramos"))
-                categoria.setSelection(1);
-            else if(categoria_rec.equals("Conciertos"))
-                categoria.setSelection(2);
-            else
-                categoria.setSelection(3);
+            for (int i = 0; i < categories.size(); i++){
+                if(categoria_rec.equals(categories.get(i))){
+                    categoria.setSelection(i);
+                }
+            }
             String titulo_rec = recuerdo.getTitulo();
             recuerdo_update = false;
             if (titulo_rec != null){

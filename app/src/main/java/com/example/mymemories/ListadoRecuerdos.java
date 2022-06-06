@@ -59,6 +59,8 @@ public class ListadoRecuerdos extends AppCompatActivity {
         cursor_viajes = db.findRecuerdosByCategoria(categoria_bundle);
 
         while (cursor_viajes.moveToNext()) {
+            if(cursor_viajes.getString(cursor_viajes.getColumnIndexOrThrow(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_TITULO)) == null)
+                continue;
             Recuerdo recuerdo = new Recuerdo();
             recuerdo.setId(cursor_viajes.getInt(cursor_viajes.getColumnIndexOrThrow(RecuerdoContract.RecuerdoEntry._ID)));
             recuerdo.setCategoria(cursor_viajes.getString(cursor_viajes.getColumnIndexOrThrow(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA)));
@@ -86,7 +88,7 @@ public class ListadoRecuerdos extends AppCompatActivity {
                 }, null, Shader.TileMode.CLAMP);
         tituloCategoria.getPaint().setShader(textShader);
 
-        // Recuerdos Viajes
+        // Recuerdos
         RecyclerView lv = findViewById(R.id.idRecyclerView);
         lv.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         adapterRecuerdo = new AdapterRecuerdo(getApplicationContext(), recuerdosViajes);
@@ -121,6 +123,7 @@ public class ListadoRecuerdos extends AppCompatActivity {
                 busquedaRecuerdos.setIconified(false);
             }
         });
+
         // Floating button add new memory
         FloatingActionButton buttonCreateNewMemoryByCategory = (FloatingActionButton) findViewById(R.id.floatingCreateMemoryByCategory);
         buttonCreateNewMemoryByCategory.setOnClickListener(new View.OnClickListener(){
