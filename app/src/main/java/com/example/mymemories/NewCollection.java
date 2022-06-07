@@ -38,18 +38,16 @@ public class NewCollection extends AppCompatActivity {
 
                 // Creamos y guardamos esa información en Recuerdo
                 Recuerdo recuerdo = new Recuerdo();
-                recuerdo.setCategoria(collection_name.getText().toString());
+                String categoria_str = collection_name.getText().toString();
+                String categoria_capitalLetter = categoria_str.substring(0, 1).toUpperCase() + categoria_str.substring(1);
+                recuerdo.setCategoria(categoria_capitalLetter);
                 recuerdo.setTitulo(null);
                 recuerdo.setFecha(null);
                 recuerdo.setLugar(null);
                 recuerdo.setDescripcion(null);
                 recuerdo.setImage(null);
 
-                /*ByteArrayOutputStream objectsByteArrayOutputStream = new ByteArrayOutputStream();
-                byte[] imageInBytes;
-                Bitmap imageToStoreBitmap = recuerdo.getImage();
-                imageToStoreBitmap.compress(Bitmap.CompressFormat.JPEG, 90, objectsByteArrayOutputStream);
-                imageInBytes = objectsByteArrayOutputStream.toByteArray();*/
+
 
                 // Añadimos la información a values
                 values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA, recuerdo.getCategoria());
