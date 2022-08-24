@@ -71,7 +71,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/localizacion_icon" />
+                        app:srcCompat="@drawable/calendario_icon" />
 
                     <TextView
                         android:id="@+id/idLugarList"
@@ -93,7 +93,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/calendario_icon" />
+                        app:srcCompat="@drawable/localizacion_icon" />
 
                     <TextView
                         android:id="@+id/idFechaList"
