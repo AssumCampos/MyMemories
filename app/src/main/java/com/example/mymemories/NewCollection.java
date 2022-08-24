@@ -48,7 +48,6 @@ public class NewCollection extends AppCompatActivity {
                 recuerdo.setImage(null);
 
 
-
                 // Añadimos la información a values
                 values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA, recuerdo.getCategoria());
                 values.put(RecuerdoContract.RecuerdoEntry.COLUMN_NAME_TITULO, recuerdo.getTitulo());

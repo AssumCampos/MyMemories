@@ -20,27 +20,11 @@ import androidx.core.app.NotificationManagerCompat;
 public class ShowNotification extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Toast.makeText(context, "Time up! :)", Toast.LENGTH_LONG).show();
-        System.out.println("Alarma estoy en show notification");
+        // Toast.makeText(context, "Time up! :)", Toast.LENGTH_LONG).show();
 
         String titulo = intent.getStringExtra("titulo");
-        String categoria = intent.getStringExtra("categoria");
-        String contentText;
-        if(categoria.equals("Viajes"))
-        {
-            contentText = "estuviste en " + titulo + ", ¡que buen recuerdo!";
-        }
-        else if(categoria.equals("Cervezas"))
-        {
-            contentText = "te tomaste una cerveza " + titulo + ", ¡que buen recuerdo!";
-        }
-        else if(categoria.equals("Ramos"))
-        {
-            contentText = "disfrutaste este ramo de flores " + titulo + ", ¡que buen recuerdo!";
-        }else
-        {
-            contentText = "estuviste en el concierto de " + titulo + ", ¡que buen recuerdo!";
-        }
+        String contentText = titulo;
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyLemubit")
                 .setSmallIcon(R.drawable.imagen_icon)
                 .setContentTitle("Tal día como hoy...")

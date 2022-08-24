@@ -97,7 +97,6 @@ public class AddMemories extends AppCompatActivity {
                         etPlannedDate.setText(selectedDate);
                     }
                 });
-
                 newFragment.show(getSupportFragmentManager(), "datePicker");
             }
         });
@@ -131,7 +130,6 @@ public class AddMemories extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
         if (recuerdo != null)
@@ -285,7 +283,6 @@ public class AddMemories extends AppCompatActivity {
             if (checkIfQueryRuns != 0){
                 Toast.makeText(getApplicationContext(), "Recuerdo guardado", Toast.LENGTH_SHORT).show();
                 setAlarm(recuerdo);
-                //finish();
                 Intent intent = new Intent(AddMemories.this, MainActivity.class);
                 startActivity(intent);
             }else{
@@ -406,6 +403,7 @@ public class AddMemories extends AppCompatActivity {
         intent.putExtra("categoria", recuerdo.getCategoria());
         intent.putExtra("titulo", recuerdo.getTitulo());
         PendingIntent pendingIntent = PendingIntent.getBroadcast(AddMemories.this, 0, intent, 0);
+
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
         String[] day_month_year = selectedDate.split("/");
@@ -430,7 +428,6 @@ public class AddMemories extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Assumtst";
             String description = "Desciprtion test";
-            //int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel("notifyLemubit", name, NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription(description);
             // Register the channel with the system; you can't change the importance

@@ -28,7 +28,6 @@ public class AdapterRecuerdo extends RecyclerView.Adapter<AdapterRecuerdo.ViewHo
         this.recuerdosAL_filtered = recuerdoAL;
     }
 
-
     @Override
     public int getItemCount() {
         return recuerdosAL_filtered.size();
@@ -64,7 +63,6 @@ public class AdapterRecuerdo extends RecyclerView.Adapter<AdapterRecuerdo.ViewHo
         };
     }
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView titulo, fecha, lugar;
         ImageView imagen;
@@ -99,7 +97,6 @@ public class AdapterRecuerdo extends RecyclerView.Adapter<AdapterRecuerdo.ViewHo
     @Override
     public AdapterRecuerdo.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
                                                          int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_recuerdo, parent, false);
         view.setOnClickListener(this.listener);
         return new AdapterRecuerdo.ViewHolder(view);

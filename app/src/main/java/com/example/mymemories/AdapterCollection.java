@@ -2,6 +2,10 @@ package com.example.mymemories;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.text.TextPaint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,21 +33,16 @@ public class AdapterCollection extends RecyclerView.Adapter<AdapterCollection.Vi
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nombreColleccion;
-        ImageView imagen;
 
         public ViewHolder(View view) {
             super(view);
             nombreColleccion = (TextView) view.findViewById(R.id.idColeccionNombre);
-            imagen = (ImageView) view.findViewById(R.id.idColeccionImagen);
             view.setTag(this);
         }
 
         public TextView getTextViewNombreColeccion() {
             return nombreColleccion;
         }
-
-        public ImageView getImageViewImagenColeccion() { return imagen; }
-
     }
     @NonNull
     @Override
@@ -61,9 +60,6 @@ public class AdapterCollection extends RecyclerView.Adapter<AdapterCollection.Vi
         // Nombre Colección
         String nombreColeccion = collectionAL.get(position);
         holder.getTextViewNombreColeccion().setText(nombreColeccion);
-        // Imagen
-        //Bitmap imagenRecuerdo = collectionAL.get(position).getImage();
-        //holder.getImageViewImagen().setImageBitmap(imagenRecuerdo);
     }
 
     public String getCollectionByPosition(int position) {

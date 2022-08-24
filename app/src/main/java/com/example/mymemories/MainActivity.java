@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                         Color.parseColor("#f57c00")
                 }, null, Shader.TileMode.CLAMP);
         textViewColecciones.getPaint().setShader(textShader);
-
+        
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("Notificación channel", "Notificación channel", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);
