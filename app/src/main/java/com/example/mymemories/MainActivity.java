@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             String coleccionSeleccionada = adapter.getCollectionByPosition(viewHolder.getAdapterPosition());
             if(coleccionSeleccionada.equals("Nueva categoria")){
                 Intent intent = new Intent(MainActivity.this, NewCollection.class);
+                finish();
                 startActivity(intent);
             }
             else{
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("BUNDLE_CAT", coleccionSeleccionada);
                 intent.putExtras(bundle);
+                finish();
                 startActivity(intent);
             }
 

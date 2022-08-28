@@ -18,7 +18,9 @@ import android.graphics.Shader;
 import android.os.Bundle;
 import android.text.TextPaint;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
 
@@ -123,6 +125,26 @@ public class ListadoRecuerdos extends AppCompatActivity {
                 busquedaRecuerdos.setIconified(false);
             }
         });
+
+        // Delete collection
+        Button deleteCollection = findViewById(R.id.deleteCollection);
+        deleteCollection.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                RecuerdoDBHelper dbHelper = new RecuerdoDBHelper(getApplicationContext());
+                dbHelper.deleteCollection(categoria_bundle);
+
+                Toast.makeText(getApplicationContext(), "Colección eliminada", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                finish();
+                startActivity(i);
+            }
+
+        });
+
 
         // Floating button add new memory
         FloatingActionButton buttonCreateNewMemoryByCategory = (FloatingActionButton) findViewById(R.id.floatingCreateMemoryByCategory);

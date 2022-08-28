@@ -120,4 +120,12 @@ public class RecuerdoDBHelper extends SQLiteOpenHelper{
         String[] selectionArgs = { id };
         db.delete(RecuerdoContract.RecuerdoEntry.TABLE_NAME, selection, selectionArgs);
     }
+
+    public void deleteCollection(String categoria){
+        RecuerdoDBHelper dbHelper = this;
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        String selection = RecuerdoContract.RecuerdoEntry.COLUMN_NAME_CATEGORIA + " = ?";
+        String[] selectionArgs = { categoria };
+        db.delete(RecuerdoContract.RecuerdoEntry.TABLE_NAME, selection, selectionArgs);
+    }
 }
