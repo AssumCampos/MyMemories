@@ -131,16 +131,39 @@ public class ListadoRecuerdos extends AppCompatActivity {
         deleteCollection.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                RecuerdoDBHelper dbHelper = new RecuerdoDBHelper(getApplicationContext());
-                dbHelper.deleteCollection(categoria_bundle);
+                // Alert dialog
+                android.app.AlertDialog.Builder alertDialogBuilder = new android.app.AlertDialog.Builder(ListadoRecuerdos.this);
+                // Setting Alert Dialog Title
+                alertDialogBuilder.setTitle("¿Quieres borrar la colección?");
+                // Setting Alert Dialog Message
+                alertDialogBuilder.setMessage("Se eliminarán todos los recuerdos asoaciados");
+                alertDialogBuilder.setCancelable(false);
 
-                Toast.makeText(getApplicationContext(), "Colección eliminada", Toast.LENGTH_SHORT).show();
+                alertDialogBuilder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
 
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                finish();
-                startActivity(i);
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        RecuerdoDBHelper dbHelper = new RecuerdoDBHelper(getApplicationContext());
+                        dbHelper.deleteCollection(categoria_bundle);
+
+                        Toast.makeText(getApplicationContext(), "Colección eliminada", Toast.LENGTH_SHORT).show();
+
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        finish();
+                        startActivity(i);
+                    }
+                });
+
+                alertDialogBuilder.setNeutralButton("Cancela", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"Cancelado",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alertDialogBuilder.show();
+
             }
 
         });

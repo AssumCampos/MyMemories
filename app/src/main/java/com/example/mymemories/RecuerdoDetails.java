@@ -2,6 +2,8 @@ package com.example.mymemories;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -69,17 +71,40 @@ public class RecuerdoDetails extends AppCompatActivity {
         buttonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RecuerdoDBHelper dbHelper = new RecuerdoDBHelper(getApplicationContext());
-                dbHelper.deleteRecuerdo(recuerdo);
-                Toast.makeText(getApplicationContext(), "Recuerdo eliminado", Toast.LENGTH_SHORT).show();
+                // Alert dialog
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RecuerdoDetails.this);
+                // Setting Alert Dialog Title
+                alertDialogBuilder.setTitle("Borrar recuerdo");
+                // Setting Alert Dialog Message
+                alertDialogBuilder.setMessage("¿Quieres borrar el recuerdo?");
+                alertDialogBuilder.setCancelable(false);
 
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                alertDialogBuilder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
 
-                startActivity(i);
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        RecuerdoDBHelper dbHelper = new RecuerdoDBHelper(getApplicationContext());
+                        dbHelper.deleteRecuerdo(recuerdo);
+                        Toast.makeText(getApplicationContext(), "Recuerdo eliminado", Toast.LENGTH_SHORT).show();
+
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+                        startActivity(i);
+                    }
+                });
+
+                alertDialogBuilder.setNeutralButton("Cancela", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(),"Cancelado",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alertDialogBuilder.show();
             }
         });
+
     }
     @Override
     public void onBackPressed(){
