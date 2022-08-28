@@ -46,10 +46,17 @@ public class MainActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(onItemClickListener);
         recyclerView.setAdapter(adapter);
 
+        FloatingActionButton buttonCreateNewMemory = (FloatingActionButton) findViewById(R.id.floatingCreateMemory);
 
         // Obtenemos las categorias
         RecuerdoDBHelper db = new RecuerdoDBHelper(this);
         Cursor cursor_categories = db.getAllCategoriasFromDB();
+
+        if(cursor_categories.getCount() == 0){
+            buttonCreateNewMemory.setEnabled(false);
+        }else{
+            buttonCreateNewMemory.setEnabled(true);
+        }
 
         while (cursor_categories.moveToNext()) {
             Boolean flag_categoria = false;
@@ -80,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             manager.createNotificationChannel(channel);
         }
 
-        FloatingActionButton buttonCreateNewMemory = (FloatingActionButton) findViewById(R.id.floatingCreateMemory);
+        buttonCreateNewMemory = (FloatingActionButton) findViewById(R.id.floatingCreateMemory);
         buttonCreateNewMemory.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -102,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
             String coleccionSeleccionada = adapter.getCollectionByPosition(viewHolder.getAdapterPosition());
             if(coleccionSeleccionada.equals("Nueva categoria")){
                 Intent intent = new Intent(MainActivity.this, NewCollection.class);
+                finish();
                 startActivity(intent);
             }
             else{
@@ -112,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 startActivity(intent);
             }
-
         }
     };
 }

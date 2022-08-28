@@ -120,7 +120,7 @@ public class AddMemories extends AppCompatActivity {
         Spinner categoria = (Spinner) findViewById(R.id.idCategory);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(AddMemories.this, android.R.layout.simple_spinner_item, categories);
         categoria.setAdapter(adapter);
-        categoria.setSelection(1);
+        categoria.setSelection(0);
         // Listeners Spinner
         categoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
