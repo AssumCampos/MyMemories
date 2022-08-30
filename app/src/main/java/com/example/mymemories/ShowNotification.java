@@ -21,9 +21,9 @@ public class ShowNotification extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // Toast.makeText(context, "Time up! :)", Toast.LENGTH_LONG).show();
-
+        String categoria = intent.getStringExtra("categoria");
         String titulo = intent.getStringExtra("titulo");
-        String contentText = titulo;
+        String contentText = "De tu coleccion... " + categoria + " hoy es el aniversario de... " + titulo;
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyLemubit")
                 .setSmallIcon(R.drawable.imagen_icon)

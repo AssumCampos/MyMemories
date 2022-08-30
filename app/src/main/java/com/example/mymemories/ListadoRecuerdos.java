@@ -190,7 +190,7 @@ public class ListadoRecuerdos extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] order = {"A-Z", "Z-A", "Mas reciente", "Mas antiguo"};
+                String[] order = {"A-Z", "Z-A", "Más reciente", "Más antiguo"};
                 // Initialize alert dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(ListadoRecuerdos.this);
 
@@ -233,7 +233,7 @@ public class ListadoRecuerdos extends AppCompatActivity {
                     }
                 });
 
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Cancela", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         // dismiss dialog
@@ -346,5 +346,15 @@ public class ListadoRecuerdos extends AppCompatActivity {
         });
 
         adapterRecuerdo.notifyDataSetChanged();
+    }
+    @Override
+    public void onBackPressed(){
+        //super.onBackPressed();
+        terminar();
+    }
+
+    public void terminar(){
+        Intent intent = new Intent(ListadoRecuerdos.this, MainActivity.class);
+        startActivity(intent);
     }
 }
