@@ -210,14 +210,17 @@ public class AddMemories extends AppCompatActivity {
                         recuerdoUpdate.setDescripcion(idDescripcion.getText().toString());
                         recuerdoUpdate.setImage(bitmap);
 
-                        dbHelper.updateRecuerdo(recuerdoUpdate);
-                        Toast.makeText(getApplicationContext(), "Recuerdo modificado", Toast.LENGTH_SHORT).show();
+                        long checkIfQueryRuns = dbHelper.updateRecuerdo(recuerdoUpdate);
+                        if (checkIfQueryRuns != 0){
+                            Toast.makeText(getApplicationContext(), "Recuerdo modificado", Toast.LENGTH_SHORT).show();
+                            setAlarm(recuerdoUpdate);
 
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                            Intent intent = new Intent(AddMemories.this, MainActivity.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(getApplicationContext(), "No se ha podido guardar en BBDD", Toast.LENGTH_SHORT).show();
+                        }
 
-                        startActivity(i);
                     }
                 }else
                     writeToDatabase(view);

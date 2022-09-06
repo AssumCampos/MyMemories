@@ -76,7 +76,7 @@ public class RecuerdoDBHelper extends SQLiteOpenHelper{
         return cursor;
     }
 
-    public void updateRecuerdo(Recuerdo recuerdo)
+    public long updateRecuerdo(Recuerdo recuerdo)
     {
         RecuerdoDBHelper dbHelper = this;
         // Gets the data repository in write mode
@@ -104,10 +104,11 @@ public class RecuerdoDBHelper extends SQLiteOpenHelper{
         String id = Integer.toString(recuerdo.getId());
         String[] selectionArgs = { id };
 
-        db.update(
+        long checkIfQueryRuns = db.update(
                 RecuerdoContract.RecuerdoEntry.TABLE_NAME,
                 values,
                 selection, selectionArgs);
+        return checkIfQueryRuns;
     }
 
     public void deleteRecuerdo(Recuerdo recuerdo)
